@@ -1,58 +1,156 @@
-import { DeployButton } from "@/components/deploy-button";
-import { EnvVarWarning } from "@/components/env-var-warning";
-import { AuthButton } from "@/components/auth-button";
-import { Hero } from "@/components/hero";
-import { ThemeSwitcher } from "@/components/theme-switcher";
-import { ConnectSupabaseSteps } from "@/components/tutorial/connect-supabase-steps";
-import { SignUpUserSteps } from "@/components/tutorial/sign-up-user-steps";
-import { hasEnvVars } from "@/lib/utils";
-import Link from "next/link";
-import { Suspense } from "react";
+
+import Image from "next/image";
+import CardWho from "@/components/card-who";
+import Header from "@/components/header";
+import ServicesCarousel from "@/components/servicesCarousel";
 
 export default function Home() {
-  return (
-    <main className="min-h-screen flex flex-col items-center">
-      <div className="flex-1 w-full flex flex-col gap-20 items-center">
-        <nav className="w-full flex justify-center border-b border-b-foreground/10 h-16">
-          <div className="w-full max-w-5xl flex justify-between items-center p-3 px-5 text-sm">
-            <div className="flex gap-5 items-center font-semibold">
-              <Link href={"/"}>Next.js Supabase Starter</Link>
-              <div className="flex items-center gap-2">
-                <DeployButton />
-              </div>
+    const acumulator = [1,2,3,4];
+    const cards = [
+        {title: "Localização", subtitle: "Brasília, Distrito Federal"},
+        {title: "Telefone", subtitle: "(61) 99999-9999"},
+        {title: "WhatsApp", subtitle: "(61) 99999-9999"},
+        {title: "E-mail", subtitle: "contato@duoc.com.br"},
+    ]
+    return(
+        <>  
+            <div className="relative w-full h-[360px] lg:h-[650px]">
+                <Image src="/hero-desktop.webp" alt="Hero Image" fill priority fetchPriority="high" className="" sizes="100vw"/>
+                <div className="absolute top-0 left-0 w-full">
+                    <Header/>
+                </div>
+                <section className="absolute top-[125px] lg:top-[200px] w-full px-7 lg:px-10">
+                    <h1 className="text-white text-[32px] lg:text-[75px] font-bold w-[320px] lg:w-[762px] leading-[1]">Inovação, Técnica e <span className="text-[#DAA520] text-[32px] lg:text-[75px] font-bold ">Sensibilidade</span></h1>
+                    <p className="text-[#D8D8D8] text-[12px] lg:text-[23px] w-[256px] lg:w-[700px] text-justify mt-2">
+                        Transformamos espaços com soluções inteligentes, sustentáveis e humanas. <span className="mt-2 block lg:inline">Unimos engenharia e arquitetura com o cuidado que só uma família pode oferecer.</span>
+                    </p>
+                    <div className="flex mt-7 lg:mt-14 lg:flex-row-reverse lg:justify-start lg:absolute lg:left-10 gap-2 lg:gap-5">
+                        <button className="border border-[#DAA520] text-[#DAA520] font-bold text-[13px] lg:text-[21px] py-1 px-1.5 lg:px-8 lg:transition lg:hover:scale-105">
+                            VER PROJETOS
+                        </button>
+                        <button className="bg-[#DAA520] font-bold text-[13px] lg:text-[21px] py-1 px-1.5 lg:px-8 lg:transition lg:hover:scale-105">
+                            SOLICITAR ORÇAMENTO
+                        </button>
+                    </div>
+                </section>
             </div>
-            {!hasEnvVars ? (
-              <EnvVarWarning />
-            ) : (
-              <Suspense>
-                <AuthButton />
-              </Suspense>
-            )}
-          </div>
-        </nav>
-        <div className="flex-1 flex flex-col gap-20 max-w-5xl p-5">
-          <Hero />
-          <main className="flex-1 flex flex-col gap-6 px-4">
-            <h2 className="font-medium text-xl mb-4">Next steps</h2>
-            {hasEnvVars ? <SignUpUserSteps /> : <ConnectSupabaseSteps />}
-          </main>
-        </div>
 
-        <footer className="w-full flex items-center justify-center border-t mx-auto text-center text-xs gap-8 py-16">
-          <p>
-            Powered by{" "}
-            <a
-              href="https://supabase.com/?utm_source=create-next-app&utm_medium=template&utm_term=nextjs"
-              target="_blank"
-              className="font-bold hover:underline"
-              rel="noreferrer"
-            >
-              Supabase
-            </a>
-          </p>
-          <ThemeSwitcher />
-        </footer>
-      </div>
-    </main>
-  );
+            <main>
+                {/*Quem Somos*/}
+                <section className="bg-[#07090A] w-full py-5 lg:py-10 pb-8">
+                    <h1 className="text-[#DAA520] text-[17px] lg:text-[22px] text-center lg:text-start font-medium px-7 lg:px-10">QUEM SOMOS</h1>
+                    <div className="flex flex-col lg:flex-row justify-between pt-4 lg:pt-0">
+                        <section className="flex gap-7 lg:gap-5 lg:flex-col px-7 lg:px-10">
+                            <div className="lg:relative">
+                                <h1 className="text-white text-[26px] lg:text-[50px] font-bold">DUOC</h1>
+                                <div className="relative lg:static flex flex-col lg:flex-col-reverse">
+                                    <img src="/line.svg" alt="Line Icon" height={10} width={100 } loading="eager" decoding="async" fetchPriority="low" className="lg:hidden absolute bottom-[11.5px]"/>
+                                    <img src="/line.svg" alt="Line Icon" height={10} width={160} loading="eager" decoding="async" fetchPriority="low" className="hidden lg:block lg:mt-7"/>
+                                    <h2 className="text-[#DAA520] text-[6.23px] lg:text-[30px] font-bold lg:absolute lg:top-[58px]">Arquitetura e Engenharia</h2>
+                                </div>
+                            </div>
+                            <p className="lg:hidden text-[#D8D8D8] text-[10px] w-[265px] text-justify">
+                                Nascendo do lar para o mundo, unindo arquitetura, engenharia e automação com cuidado, confiança e inovação.
+                            </p>
+                            <p className="hidden lg:block text-[#D8D8D8] text-justify w-[600px] my-5">
+                                A DUOC nasce do lar para o mundo, unindo engenharia e arquitetura com o cuidado e a confiança que só uma família pode oferecer.
+                                <br />
+                                <br />
+                                Atuamos nas áreas de Arquitetura, Engenharia e Automação Residencial e Empresarial, oferecendo soluções que unem técnica, inovação e sensibilidade em cada projeto. Nosso propósito é transformar espaços com soluções inteligentes, sustentáveis e humanas, criando ambientes que acolhem, funcionam e inspiram.                        
+                            </p>
+                            <button className="hidden bg-[#DAA520] font-bold text-[17px] py-1 w-[200px] transition hover:scale-105 lg:block">
+                                CONHEÇA MAIS
+                            </button>
+                        </section>
+
+                        <div className="flex lg:flex-col gap-5 lg:gap-10 pt-6 pl-7 lg:px-10 lg:pt-0 overflow-auto">
+                            <div className="flex gap-5 lg:gap-10">
+                                <CardWho title="Confiança" text="Honramos cada etapa do processo com seriedade, ética e dedicação." srcImage="/shield.svg" altImage="Confidence Icon" heightImageMobile={15} widthImageMobile={15} heightImageDesktop={20} widthImageDesktop={20}/>
+                                <CardWho title="Inovação" text="Incorporamos o que há de mais moderno em automação e tecnologia." srcImage="/light-on.svg" altImage="Innovation Icon" heightImageMobile={20} widthImageMobile={20} heightImageDesktop={25} widthImageDesktop={25}/>
+                            </div>
+                            <div className="flex gap-5 lg:gap-10">
+                                <CardWho title="Cuidado" text="Cuidamos de cada projeto como quem cuida de casa." srcImage="/care.svg" altImage="Care Icon" heightImageMobile={20} widthImageMobile={20} heightImageDesktop={25} widthImageDesktop={25}/>
+                                <CardWho title="Família" text="Nossa raiz afetiva fortalece cada relação construída." srcImage="/family.svg" altImage="Family Icon" heightImageMobile={25} widthImageMobile={25} heightImageDesktop={30} widthImageDesktop={30}/>
+                                <div className="lg:hidden w-2"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="lg:hidden w-full flex justify-center pt-8">
+                        <button className="border border-[#DAA520] text-[#DAA520] font-bold text-[13px] py-1 px-10">
+                            CONHEÇA MAIS
+                        </button>
+                    </div>
+                </section>
+
+
+                <section className="bg-[#0B0E10] min-h-[400px] w-full flex flex-col justify-center items-center overflow-hidden py-5 lg:py-10">
+                    <h1 className="text-[#DAA520] text-[17px] lg:text-[22px] text-center lg:text-start font-medium px-7 lg:px-10">NOSSOS SERVIÇOS</h1>
+                    <h2 className="text-white text-center font-bold mt-2 lg:text-[30px]">
+                        Soluções Completas em
+                        <br /> 
+                        <span className="text-[#DAA520]">Engenharia e Automação</span>
+                    </h2>
+                    <img src="/line.svg" alt="Line Icon" height={10} width={100 } loading="eager" decoding="async" fetchPriority="low" className="lg:hidden"/>
+                    <img src="/line.svg" alt="Line Icon" height={10} width={150} loading="eager" decoding="async" fetchPriority="low" className="hidden lg:block mt-2"/>
+
+                    <ServicesCarousel/>
+                </section>
+
+
+                <section className="bg-[#06090B] min-h-[400px] w-full px-7 lg:px-10 py-5 lg:py-10 flex flex-col justify-center items-center">
+                    <h1 className="text-[#DAA520] text-[17px] lg:text-[22px] text-center lg:text-start font-medium px-7 lg:px-10">PORTFÓLIO </h1>
+                    <h2 className="text-white text-center font-bold mt-2 lg:text-[30px]">
+                        Projetos <span className="text-[#DAA520]">Recentes</span>
+                    </h2>
+                    <img src="/line.svg" alt="Line Icon" height={10} width={100 } loading="eager" decoding="async" fetchPriority="low" className="lg:hidden"/>
+                    <img src="/line.svg" alt="Line Icon" height={10} width={150} loading="eager" decoding="async" fetchPriority="low" className="hidden lg:block mt-2"/>
+                </section>
+
+
+                <section className="bg-[#0B0E10] min-h-[400px] w-full px-7 lg:px-10 py-5 lg:py-10 flex flex-col justify-center items-center">
+                    <h1 className="text-[#DAA520] text-[17px] lg:text-[22px] text-center lg:text-start font-medium px-7 lg:px-10">PARCEIROS </h1>
+                    <h2 className="text-white text-center font-bold mt-2 lg:text-[30px]">
+                        Parcerias de <span className="text-[#DAA520]">Confiança</span>
+                    </h2>
+                    <img src="/line.svg" alt="Line Icon" height={10} width={100 } loading="eager" decoding="async" fetchPriority="low" className="lg:hidden"/>
+                    <img src="/line.svg" alt="Line Icon" height={10} width={150} loading="eager" decoding="async" fetchPriority="low" className="hidden lg:block mt-2"/>
+                    <div className="flex flex-wrap gap-5 lg:gap-10 mt-5 justify-center items-center">
+                        {acumulator.map((index)=>(
+                            <div key={index} className="h-[60px] lg:h-[90px] w-[140px] lg:w-[200px] bg-[#D9D9D9]"/>
+                        ))}
+                    </div>
+                    <p className="text-[#D8D8D8] text-[12px] lg:text-[16px] text-center mt-5 lg:mx-[250px]">Mantemos parcerias construídas com base na confiança, na transparência e no compromisso com a qualidade. Trabalhamos ao lado de profissionais e empresas que compartilham dos mesmos valores e da busca contínua por soluções inovadoras e eficientes.</p>
+                </section>
+
+
+                <section className="bg-[#010101] min-h-[400px] w-full px-7 lg:px-10 py-5 lg:py-10">
+                    <h1 className="text-[#DAA520] text-[17px] lg:text-[22px] lg:text-start font-medium ">FALE CONCOSCO</h1>
+                    <div className="lg:max-w-[390px]">
+                        <h2 className="text-white font-bold mt-2 lg:text-[30px]">
+                            Pronto para  <span className="text-[#DAA520]">Transformar</span> <br className="hidden lg:block"/> seu Espaço
+                        </h2>
+                        <img src="/lastLine.svg" alt="Line Icon" height={5} width={205} loading="eager" decoding="async" fetchPriority="low" className="lg:hidden"/>
+                        <img src="/lastLine.svg" alt="Line Icon" height={10} width={180} loading="eager" decoding="async" fetchPriority="low" className="hidden lg:block mt-2"/>
+                        <p className="text-[#D8D8D8] text-[12px] lg:text-[16px] mt-2 lg:text-justify">Entre em contato conosco para uma consulta personalizada. Nossa equipe está pronta para entender suas necessidades e apresentar as melhores soluções.</p>
+                        <div className=" flex flex-wrap justify-center lg:justify-start items-center lg:items-start lg:flex-col mt-5 gap-1 lg:gap-5">
+                            {cards.map((card, index)=>(
+                                <article key={index} className="flex h-[50px] lg:h-auto w-[150px] lg:w-auto">
+                                    <div className="h-[30px] lg:h-[50px] w-[30px] lg:w-[50px] bg-[#DAA520] rounded-md"/>
+                                    <div className="text-white ml-2">
+                                        <h1 className="text-[10px] lg:text-[16px] font-bold">{card.title}</h1>
+                                        <h2 className="text-[9px] lg:text-[15px]">{card.subtitle}</h2>
+                                    </div>
+                                </article>
+                            ))}
+                        </div>
+                    </div>
+                    <div>
+
+                    </div>
+                </section>
+
+
+            </main>
+        </>
+    );
 }
