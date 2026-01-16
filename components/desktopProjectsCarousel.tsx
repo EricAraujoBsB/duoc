@@ -50,9 +50,7 @@ const ListComponents = [
     localization:"Sobradinho, Brasília - DF",
     imageSrc: "/sla5ne.webp",
     imageAlt: "Slane Image"
-  },
-    
-  ]
+  }]
 
   function mod(n:number , m: number) {
     return ((n % m) + m) % m;

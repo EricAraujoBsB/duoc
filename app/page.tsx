@@ -64,7 +64,7 @@ export default function Home() {
                             </button>
                         </section>
 
-                        <div className="flex lg:flex-col gap-5 lg:gap-10 pt-6 pl-7 lg:px-10 lg:pt-0 overflow-auto">
+                        <div className="flex lg:flex-col gap-5 lg:gap-10 pt-6 pl-7 lg:px-10 lg:pt-0 overflow-auto scrollbar-hide">
                             <div className="flex gap-5 lg:gap-10">
                                 <CardWho title="Confiança" text="Honramos cada etapa do processo com seriedade, ética e dedicação." srcImage="/shield.svg" altImage="Confidence Icon" heightImageMobile={15} widthImageMobile={15} heightImageDesktop={20} widthImageDesktop={20}/>
                                 <CardWho title="Inovação" text="Incorporamos o que há de mais moderno em automação e tecnologia." srcImage="/light-on.svg" altImage="Innovation Icon" heightImageMobile={20} widthImageMobile={20} heightImageDesktop={25} widthImageDesktop={25}/>
@@ -153,31 +153,40 @@ export default function Home() {
                                 ))}
                             </div>
                         </div>
-                        <form action="" className="px-7 pb-7 pt-3.5 lg:py-2 border border-[#1F1F1F] bg-[#0E1011] flex flex-col gap-3 rounded-lg lg:min-w-[500px] lg:justify-center">
+                        <form action="" className="px-7 pb-7 pt-3.5 lg:py-5 border border-[#1F1F1F] bg-[#0E1011] flex flex-col gap-3 rounded-lg lg:min-w-[500px] lg:justify-center">
                             <div>
                                 <label htmlFor="name" className="text-[#D8D8D8] font-bold text-[9.5px] lg:text-[14px]">Nome Completo</label>
-                                <input type="text" id="name" placeholder="Seu nome" className="w-full border border-[#464646] bg-[#0E1011] rounded-md text-[#D8D8D8] mt-1.5 pl-2 text-[9.5px] lg:text-[14px] h-[30px] lg:h-[45px] focus:outline-none"/>
+                                <input type="text" id="name" autoComplete="name" inputMode="text" placeholder="Seu nome" className="w-full border border-[#464646] bg-[#0E1011] rounded-md text-[#D8D8D8] mt-1.5 pl-2 text-[9.5px] lg:text-[14px] h-[30px] lg:h-[45px] focus:outline-none"/>
                             </div>
                             <div className="grid grid-cols-2 gap-4">
                                 <div className="flex flex-col">
                                     <label htmlFor="email" className="text-[#D8D8D8] font-bold text-[9.5px] lg:text-[14px]">E-mail</label>
-                                    <input type="email" id="email" placeholder="seu@email.com" className="border border-[#464646] bg-[#0E1011] rounded-md text-[#D8D8D8] pl-2 mt-1.5 text-[9.5px] lg:text-[14px] h-[30px] lg:h-[45px] focus:outline-none"/>
+                                    <input type="email" id="email" autoComplete="email" inputMode="email" placeholder="seu@email.com" className="border border-[#464646] bg-[#0E1011] rounded-md text-[#D8D8D8] pl-2 mt-1.5 text-[9.5px] lg:text-[14px] h-[30px] lg:h-[45px] focus:outline-none"/>
                                 </div>
                                 <div className="flex flex-col">
-                                    <label htmlFor="phone number" className="text-[#D8D8D8] font-bold text-[9.5px] lg:text-[14px]">Telefone</label>
-                                    <input type="tel" id="phone number" placeholder="(61) 99999-9999" className="border border-[#464646] bg-[#0E1011] rounded-md text-[#D8D8D8] pl-2 mt-1.5 text-[9.5px] lg:text-[14px] h-[30px] lg:h-[45px] focus:outline-none"/>
+                                    <label htmlFor="phone" className="text-[#D8D8D8] font-bold text-[9.5px] lg:text-[14px]">Telefone</label>
+                                    <input type="tel" id="phone" autoComplete="tel" inputMode="tel" placeholder="(61) 99999-9999" className="border border-[#464646] bg-[#0E1011] rounded-md text-[#D8D8D8] pl-2 mt-1.5 text-[9.5px] lg:text-[14px] h-[30px] lg:h-[45px] focus:outline-none"/>
                                 </div>
+                            </div>
+                            <div className="flex flex-col relative">
+                                <label htmlFor="select" className="text-[#D8D8D8] font-bold text-[9.5px] lg:text-[14px]">Assunto</label>
+                                <select name="select" id="select" defaultValue="duvidas" className="cursor-pointer appearance-none border border-[#464646] bg-[#0E1011] rounded-md text-[#D8D8D8] pl-2 mt-1.5 text-[9.5px] lg:text-[14px] h-[30px] lg:h-[45px] focus:outline-none">
+                                    <option value="duvidas">Dúvidas</option>
+                                    <option value="orcamento" >Orçamento</option>
+                                </select>
+                                <img src="invertedTriangle.svg" alt="Select Icon" width={7.5}  height={7.5} loading="eager" decoding="async" fetchPriority="low" className="absolute right-[10px] bottom-[11px] lg:hidden"/>
+                                <img src="invertedTriangle.svg" alt="Select Icon" width={10}  height={10} loading="eager" decoding="async" fetchPriority="low" className="absolute right-[15px] bottom-[15px] hidden lg:block"/>
                             </div>
                             <div>
                                 <label htmlFor="message" className="text-[#D8D8D8] font-bold text-[9.5px] lg:text-[14px]">Mensagem</label>
-                                <textarea name="message" id="message" placeholder="Conte-nos sobre seu projeto:" className="w-full border border-[#464646] bg-[#0E1011] rounded-md resize-none text-[#D8D8D8] p-2 mt-1.5 text-[9.5px] lg:text-[14px] lg:h-[125px] focus:outline-none"></textarea>
+                                <textarea name="message" id="message" placeholder="Conte-nos sobre seu projeto:" className="w-full border border-[#464646] bg-[#0E1011] rounded-md resize-none text-[#D8D8D8] p-2 mt-1.5 text-[9.5px] lg:text-[14px] h-[100px] lg:h-[125px] focus:outline-none scrollbar-thin"></textarea>
                             </div>
                             <button type="submit" className="w-full bg-[#DAA520] py-1 cursor-pointer text-[12px] lg:text-[17px] text-[#0E1011] font-bold" > 
                                 ENVIAR MENSAGEM 
                             </button>
                             <p className="text-center text-[7px] lg:text-[10px] text-[#D8D8D8]/55">Respondemos em até 24 horas úteis.</p>
-                            </form>
-                        </div>
+                        </form>
+                    </div>
                 </section>
             </main>
         </>
