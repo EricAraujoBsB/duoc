@@ -41,7 +41,7 @@ export default function MenuMobile({links}: MenuProps) {
                 src="/menu-hamburger.svg"
                 width={25}
                 height={25}
-                alt="Menu"
+                alt="Open Menu"
                 loading="eager"
                 decoding="async"
                 fetchPriority="low"
@@ -52,7 +52,7 @@ export default function MenuMobile({links}: MenuProps) {
                 <div className="py-5 px-7 absolute top-0 left-0 flex justify-between w-full">
                     <Image src="/logo-icon.svg" alt="Logo" width={150} height={75} className="lg:hidden"></Image>  
                     
-                    <img src="/close.svg" width={20} height={20} loading="eager" decoding="async" fetchPriority="low" className="cursor-pointer" onClick={closeMenu}/>
+                    <img src="/close.svg" width={20} height={20} alt="Close Menu" loading="eager" decoding="async" fetchPriority="low" className="cursor-pointer" onClick={closeMenu}/>
                 </div>
                     {links.map( 
                         (link) => 
