@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Link from "next/link";
 
 type CardProps = {
     title: string,
@@ -87,3 +87,36 @@ export function ServiceCard({title, text, item1, item2, item3, imageSrc, imageAl
     );
 }
 
+type ServiceCard2Props = {
+    position: number;
+}
+
+export function ServiceCard2({ position }: ServiceCard2Props) {
+    function isPair(position: number) {
+        return position%2;
+    }
+    return(
+        <article className="mx-5">
+                <div className={isPair(position)?"xl:flex xl:flex-row-reverse justify-center gap-10":"xl:flex justify-center gap-10"}>
+                        <div className="xl:mt-3">
+                            <div className="bg-gray-600 w-full xl:w-[550px] h-[195px] xl:h-[387.5px] rounded-xl"/>
+                        </div>
+                        <div>
+                            <h1 className="text-[#D8D8D8] text-[23px] xl:text-[31px] font-bold mt-5 xl:mt-0">Lorem Ipsum</h1>
+                            <img src="/line.svg" alt="Line Icon" height={10} width={130} loading="eager" decoding="async" fetchPriority="low" className="lg:hidden mt-5"/>
+                            <img src="/line.svg" alt="Line Icon" height={10} width={100} loading="eager" decoding="async" fetchPriority="low" className="hidden lg:block mt-5"/>
+                            <p className="text-[#D8D8D8]/80 mt-4 text-[13.5px] xl:text-[20px] text-justify xl:max-w-[420px] line-clamp-6 xl:line-clamp-[7]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque dolorum repellendus reiciendis rerum, eum suscipit at soluta eligendi, aliquid deserunt nesciunt magnam eos nihil quas atque maxime quam facere repudiandae. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            <ul className="grid grid-cols-2 list-disc marker:text-[#DAA520] text-[#D8D8D8]/60 font-bold text-[10px] xl:max-w-[405px] xl:text-[15px] mx-4 gap-7 mt-2.5 xl:mt-5 gap-y-1.5">
+                                <li>Lorem Ipsum Dolor</li>
+                                <li>Lorem Ipsum Dolor</li>
+                                <li>Lorem Ipsum Dolor</li>
+                            </ul>
+                            <Link href={`/`} className="flex gap-1 text-[#DAA520] text-[13.5px] xl:text-[20px] mt-2.5">
+                                Ver detalhes completo
+                                <img src="/arrow.svg" alt="Arrow Icon" width={13.5} height={10} loading="eager" decoding="async" fetchPriority="low" className="mt-[2.5px]"/>
+                            </Link>
+                        </div>
+                    </div>
+                </article>
+    );
+}

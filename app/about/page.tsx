@@ -8,7 +8,7 @@ export default function About() {
         <main>
             {/* SOBRE */}
             <section className="bg-[#07090A] w-full py-5 lg:py-10 pb-8 px-7 lg:px-10 flex flex-col justify-center items-center">
-                <div className="min-h-[100px] w-full"></div>
+                <div className="min-h-[100px] w-full"/>
                 <h1 className="text-[#DAA520] text-[15px] lg:text-[37px] lg:text-start px-7 lg:px-10">SOBRE NÓS</h1>
                 <h2 className="text-white text-[23px] lg:text-[67px] font-bold">Nossa História</h2>
                 <img src="/line.svg" alt="Line Icon" height={10} width={100} loading="eager" decoding="async" fetchPriority="low" className="lg:hidden mt-2"/>
