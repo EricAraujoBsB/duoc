@@ -8,12 +8,17 @@ import ProjectsCarousel from "@/components/projectsCarousel";
 
 export default function Home() {
 
-    const acumulator = [1,2,3,4];
-    const cards = [
-        {title: "Localização", subtitle: "Brasília, Distrito Federal"},
-        {title: "Telefone", subtitle: "(61) 99999-9999"},
-        {title: "WhatsApp", subtitle: "(61) 99999-9999"},
-        {title: "E-mail", subtitle: "contato@duoc.com.br"},
+    const partnerLabels = [
+        {title: "ABB", urlSvg: "/ABB-Logo.svg", widthMobile: 100, heigthMobile: 40, widthDesktop: 150, heigthDesktop: 80},
+        {title: "Schneider Electric", urlSvg: "/Schneider-Logo.svg", widthMobile: 125, heigthMobile: 40, widthDesktop: 150, heigthDesktop: 80},
+        {title: "Solar Edge", urlSvg: "/Solar-Logo.svg", widthMobile: 125, heigthMobile: 40, widthDesktop: 150, heigthDesktop: 80},
+        {title: "UKS Quadros Elétricos", urlSvg: "/UKS-Logo.svg", widthMobile: 70, heigthMobile: 20, widthDesktop: 75, heigthDesktop: 40},
+    ]
+    const contactLabels = [
+        {title: "Localização", subtitle: "Brasília, Distrito Federal", urlSvg: "/Pin.svg", widthMobile: 12.5, heigthMobile: 12.5, widthDesktop: 17.5, heigthDesktop: 17.5},
+        {title: "Telefone", subtitle: "(61) 99999-9999", urlSvg: "/Phone.svg", widthMobile: 15, heigthMobile: 15, widthDesktop: 20, heigthDesktop: 20},
+        {title: "WhatsApp", subtitle: "(61) 99999-9999", urlSvg: "/WhatsAPP.svg", widthMobile: 15, heigthMobile: 15, widthDesktop: 20, heigthDesktop: 20},
+        {title: "E-mail", subtitle: "contato@duoc.com.br", urlSvg: "/Email.svg", widthMobile: 15, heigthMobile: 15, widthDesktop: 20, heigthDesktop: 20},
     ]
 
     return(
@@ -84,7 +89,7 @@ export default function Home() {
                         <br /> 
                         <span className="text-[#DAA520]">Engenharia e Automação</span>
                     </h2>
-                    <img src="/line.svg" alt="Line Icon" height={10} width={100 } loading="eager" decoding="async" fetchPriority="low" className="lg:hidden"/>
+                    <img src="/line.svg" alt="Line Icon" height={10} width={100} loading="eager" decoding="async" fetchPriority="low" className="lg:hidden"/>
                     <img src="/line.svg" alt="Line Icon" height={10} width={150} loading="eager" decoding="async" fetchPriority="low" className="hidden lg:block mt-2"/>
 
                     <ServicesCarousel/>
@@ -99,7 +104,7 @@ export default function Home() {
                     <h2 className="text-white text-center font-bold mt-2 lg:text-[30px]">
                         Projetos <span className="text-[#DAA520]">Recentes</span>
                     </h2>
-                    <img src="/line.svg" alt="Line Icon" height={10} width={100 } loading="eager" decoding="async" fetchPriority="low" className="lg:hidden"/>
+                    <img src="/line.svg" alt="Line Icon" height={10} width={100} loading="eager" decoding="async" fetchPriority="low" className="lg:hidden"/>
                     <img src="/line.svg" alt="Line Icon" height={10} width={150} loading="eager" decoding="async" fetchPriority="low" className="hidden lg:block mt-2"/>
                     <ProjectsCarousel/>
                     <Link href={"/projects"} className="hidden lg:block text-[#0B0E10] bg-[#DAA520] mt-10 font-bold text-[17px] py-1 w-[300px] transition hover:scale-105 text-center">
@@ -113,14 +118,17 @@ export default function Home() {
                     <h2 className="text-white text-center font-bold mt-2 lg:text-[30px]">
                         Parcerias de <span className="text-[#DAA520]">Confiança</span>
                     </h2>
-                    <img src="/line.svg" alt="Line Icon" height={10} width={100 } loading="eager" decoding="async" fetchPriority="low" className="lg:hidden"/>
+                    <img src="/line.svg" alt="Line Icon" height={10} width={100} loading="eager" decoding="async" fetchPriority="low" className="lg:hidden"/>
                     <img src="/line.svg" alt="Line Icon" height={10} width={150} loading="eager" decoding="async" fetchPriority="low" className="hidden lg:block mt-2"/>
-                    <div className="flex flex-wrap gap-5 lg:gap-10 mt-5 justify-center items-center">
-                        {acumulator.map((index)=>(
-                            <div key={index} className="h-[60px] lg:h-[90px] w-[140px] lg:w-[200px] bg-[#D9D9D9]"/>
+                    <div className="flex flex-wrap gap-5 lg:gap-10 mt-10 xl:mt-5 justify-center items-center">
+                        {partnerLabels.map((label, index)=>(
+                            <div key={index} >
+                                <img src={label.urlSvg} alt={`${label.title} Logo`}  width={label.widthMobile} height={label.heigthMobile} loading="eager" decoding="async" fetchPriority="low" className="xl:hidden"/>
+                                <img src={label.urlSvg} alt={`${label.title} Logo`}   width={label.widthDesktop} height={label.heigthDesktop} loading="eager" decoding="async" fetchPriority="low" className="hidden xl:block"/>
+                            </div>
                         ))}
                     </div>
-                    <p className="text-[#D8D8D8] text-[12px] lg:text-[16px] text-center mt-5 lg:mx-[250px]">Mantemos parcerias construídas com base na confiança, na transparência e no compromisso com a qualidade. Trabalhamos ao lado de profissionais e empresas que compartilham dos mesmos valores e da busca contínua por soluções inovadoras e eficientes.</p>
+                    <p className="text-[#D8D8D8] text-[12px] lg:text-[16px] text-center mt-7 xl:mt-5 lg:mx-[250px]">Mantemos parcerias construídas com base na confiança, na transparência e no compromisso com a qualidade. Trabalhamos ao lado de profissionais e empresas que compartilham dos mesmos valores e da busca contínua por soluções inovadoras e eficientes.</p>
                 </section>
 
                 {/*Fale Conosco*/}
@@ -135,12 +143,15 @@ export default function Home() {
                             <img src="/lastLine.svg" alt="Line Icon" height={10} width={180} loading="eager" decoding="async" fetchPriority="low" className="hidden lg:block mt-2"/>
                             <p className="text-[#D8D8D8] text-[12px] lg:text-[16px] mt-2 lg:text-justify">Entre em contato conosco para uma consulta personalizada. Nossa equipe está pronta para entender suas necessidades e apresentar as melhores soluções.</p>
                             <div className=" flex flex-wrap justify-center lg:justify-start items-center lg:items-start lg:flex-col mt-5 gap-1 lg:gap-5">
-                                {cards.map((card, index)=>(
+                                {contactLabels.map((label, index)=>(
                                     <article key={index} className="flex h-[50px] lg:h-auto w-[150px] lg:w-auto">
-                                        <div className="h-[30px] lg:h-[50px] w-[30px] lg:w-[50px] bg-[#DAA520] rounded-md"/>
+                                        <div className="h-[30px] lg:h-[50px] w-[30px] lg:w-[50px] bg-[#DAA520] rounded-md flex justify-center items-center">
+                                            <img src={label.urlSvg} alt={`${label.title} Imagem`} width={label.widthMobile} height={label.heigthMobile}  loading="eager" decoding="async" fetchPriority="low" className="lg:hidden"/>
+                                            <img src={label.urlSvg} alt={`${label.title} Imagem`} width={label.widthDesktop} height={label.heigthDesktop}  loading="eager" decoding="async" fetchPriority="low" className="hidden lg:block"/>
+                                        </div>
                                         <div className="text-white ml-2">
-                                            <h1 className="text-[10px] lg:text-[16px] font-bold">{card.title}</h1>
-                                            <h2 className="text-[9px] lg:text-[15px]">{card.subtitle}</h2>
+                                            <h1 className="text-[10px] lg:text-[16px] font-bold">{label.title}</h1>
+                                            <h2 className="text-[9px] lg:text-[15px]">{label.subtitle}</h2>
                                         </div>
                                     </article>
                                 ))}

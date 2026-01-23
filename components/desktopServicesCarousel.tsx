@@ -1,7 +1,7 @@
 "use client";
 
 import CircleComponent from "@/components/circle";
-import { ServiceCard } from "@/components/serviceCard";
+import { ServiceCard } from "@/components/serviceCardHome";
 import { useState } from "react";
 
 export default function Carousel() {

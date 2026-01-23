@@ -7,10 +7,10 @@ const DesktopCarousel = dynamic(()=>import('./desktopServicesCarousel'), {loadin
 export default function ServicesCarousel() {
     return(
     <>
-        <div className="lg:hidden mt-5">
+        <div className="xl:hidden mt-5">
             <MobileCarousel/>
         </div>
-        <div className="hidden lg:block mt-5 w-full">
+        <div className="hidden xl:block mt-5 w-full">
             <DesktopCarousel/>
         </div>
     </>)

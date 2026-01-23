@@ -17,19 +17,19 @@ export default function About() {
             </section>
 
             {/* HISTÓRIA */}
-            <section className="bg-[#07090A] w-full pt-2.5 px-7 lg:px-10 lg:max-h-[625px]">
+            <section className="bg-[#07090A] w-full pt-2.5 px-7 xl:px-32 2xl:px-64 xl:max-h-[625px]">
                 <h1 className="text-[#DAA520] text-[14px] lg:text-[22px] lg:text-start">NOSSA HISTÓRIA</h1>
-                <div className="lg:flex lg:justify-between">
-                    <div className="lg:max-w-[527.5px]">
-                        <h2 className="text-white text-[20px] lg:text-[48px] font-bold">Do Lar Para o Mundo</h2>
-                        <img src="/line.svg" alt="Line Icon" height={10} width={90} loading="eager" decoding="async" fetchPriority="low" className="lg:hidden"/>
-                        <img src="/line.svg" alt="Line Icon" height={10} width={220} loading="eager" decoding="async" fetchPriority="low" className="hidden lg:block"/>
-                        <p className="lg:hidden text-[#D8D8D8] text-[12px] text-justify mt-5">
+                <div className="xl:flex xl:justify-between">
+                    <div className="xl:max-w-[527.5px]">
+                        <h2 className="text-white text-[20px] xl:text-[48px] font-bold">Do Lar Para o Mundo</h2>
+                        <img src="/line.svg" alt="Line Icon" height={10} width={90} loading="eager" decoding="async" fetchPriority="low" className="xl:hidden"/>
+                        <img src="/line.svg" alt="Line Icon" height={10} width={220} loading="eager" decoding="async" fetchPriority="low" className="hidden xl:block"/>
+                        <p className="xl:hidden text-[#D8D8D8] text-[12px] text-justify mt-5">
                             Lorem ipsum dolor sit amet. Cum libero obcaecati sit maxime architecto rem dolor magnam est dolores maxime non rerum molestiae. Sit dolores quaerat ut enim tempore sit accusamus repellendus.
                             <br />
                             Sed reprehenderit galisum aut assumenda omnis ut vero quia ut tempore deserunt ut enim enim. Et consequuntur repellat sed quisquam itaque et galisum sunt eos sunt quae 33 autem optio.
                         </p>
-                        <p className="hidden lg:block text-[#D8D8D8] text-[15px] text-justify mt-5">
+                        <p className="hidden xl:block text-[#D8D8D8] text-[15px] text-justify mt-5">
                             Lorem ipsum dolor sit amet. Cum libero obcaecati sit maxime architecto rem dolor magnam est dolores maxime non rerum molestiae. Sit dolores quaerat ut enim tempore sit accusamus repellendus.
                             <br />
                             Sed reprehenderit galisum aut assumenda omnis ut vero quia ut tempore deserunt ut enim enim. Et consequuntur repellat sed quisquam itaque et galisum sunt eos sunt quae 33 autem optio.
@@ -37,13 +37,13 @@ export default function About() {
                         </p>
                     </div>
                     <div className="flex flex-col justify-center items-center min-h-[250px] mt-5">
-                        <Image src="/office.webp" alt="Office Image" width={220} height={220} priority fetchPriority="high" className="z-10 lg:hidden" />
-                        <Image src="/office.webp" alt="Office Image" width={420} height={420} priority fetchPriority="high" className="z-10 hidden lg:block mr-10" />
-                        <img src="/square.svg" alt="Square Icon" width={86} height={86} className="relative left-[85px] bottom-[70px] z-0 lg:hidden"/>
-                        <img src="/square.svg" alt="Square Icon" width={160} height={160} className="relative left-[145px] bottom-[125px] z-0 hidden lg:block"/>
+                        <Image src="/office.webp" alt="Office Image" width={220} height={220} priority fetchPriority="high" className="z-10 xl:hidden" />
+                        <Image src="/office.webp" alt="Office Image" width={420} height={420} priority fetchPriority="high" className="z-10 hidden xl:block mr-10" />
+                        <img src="/square.svg" alt="Square Icon" width={86} height={86} className="relative left-[85px] bottom-[70px] z-0 xl:hidden"/>
+                        <img src="/square.svg" alt="Square Icon" width={160} height={160} className="relative left-[145px] bottom-[125px] z-0 hidden xl:block"/>
                     </div>
                 </div>
-                <div className="flex gap-5 lg:gap-[30px] justify-center items-center relative bottom-[40px] lg:justify-start lg:relative lg:bottom-[190px]  lg:max-w-[527.5px]">
+                <div className="flex gap-5 xl:gap-[30px] justify-center items-center relative bottom-[40px] xl:justify-start xl:relative xl:bottom-[190px]  xl:max-w-[527.5px]">
                     <HistoryCard title="MISSÃO" text="Transformar espaços com soluções inteligentes, sustentáveis e humanas."/>
                     <HistoryCard title="VISÃO" text="Ser referência em arquitetura, engenharia e automação em Brasília. "/>
                 </div>

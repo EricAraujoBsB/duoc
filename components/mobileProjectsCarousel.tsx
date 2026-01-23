@@ -81,24 +81,24 @@ export default function Home() {
 
   useEffect(() => {
 
-    const executai = (cardRef:RefObject<HTMLDivElement | null>, index:number) => {
+    const setActiveCircle = (cardRef:RefObject<HTMLDivElement | null>, index:number) => {
         if (!cardRef?.current ) return;
         const observer = new IntersectionObserver(
-        ([entry]) => {
-            if (entry.isIntersecting) {
-            setActive(index);
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setActive(index);
+                }
+            },
+            {
+                threshold: 0.55
             }
-        },
-        {
-            threshold: 0.55, // 100% visível
-        }
         );
         observer.observe(cardRef.current);
         return () => observer.disconnect();
     }
 
     ListRef.map((cardRef, index)=>(
-        executai(cardRef, index)
+        setActiveCircle(cardRef, index)
     ));
 
   }, []);

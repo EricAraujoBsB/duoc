@@ -1,4 +1,6 @@
 import { createServerClient } from "@supabase/ssr";
+import { SupabaseClient } from "@supabase/supabase-js";
+
 import { cookies } from "next/headers";
 
 /**
@@ -31,4 +33,22 @@ export async function createClient() {
       },
     },
   );
+}
+
+type Service = {
+    id: number,
+    nome: string,
+    descricao: string,
+    urlimagem: string;
+    escopo: string[];
+}
+
+export async function getServices_ScopeLimitedBy3(): Promise<Service[]> {
+  try {
+    const supabase = await createClient();
+    const {data, error} = await supabase.rpc("getservices_scopelimitedby3");
+    return data;
+  } catch(error) {
+    throw error;
+  }
 }
