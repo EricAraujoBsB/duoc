@@ -44,7 +44,7 @@ export default function Home() {
                                 <h1 className="text-white text-[26px] md:text-[50px] font-bold">DUOC</h1>
                                 <div className="relative md:static flex flex-col md:flex-col-reverse">
                                     <img src="/line.svg" alt="Line Icon" height={10} width={100 } loading="eager" decoding="async" fetchPriority="low" className="md:hidden absolute bottom-[11.5px]"/>
-                                    <img src="/line.svg" alt="Line Icon" height={10} width={160} loading="eager" decoding="async" fetchPriority="low" className="hidden lg:block md:mt-7"/>
+                                    <img src="/line.svg" alt="Line Icon" height={10} width={160} loading="eager" decoding="async" fetchPriority="low" className="hidden md:block md:mt-7"/>
                                     <h2 className="text-[#DAA520] text-[6.23px] md:text-[30px] font-bold md:absolute md:top-[58px]">Arquitetura e Engenharia</h2>
                                 </div>
                             </div>
