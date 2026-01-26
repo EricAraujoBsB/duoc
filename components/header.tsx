@@ -1,6 +1,7 @@
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
+import { CSSProperties } from "react";
 
 const Menu = dynamic(() => import('./menu'), {loading: ()=>null});
 
@@ -28,7 +29,7 @@ export default function Header() {
                     {links.map( 
                         (link, index) => 
                             <li key={link.name}>
-                                <Link href={`/#${link.id}`}className="text-white cursor-pointer lg:inline-block lg:hover:font-bold lg:transition lg:hover:scale-105 lg:min-w-[var(--min-w)]"  style={{'--min-w':`${ListWidth[index].value}px`}}>
+                                <Link href={`/#${link.id}`}className="text-white cursor-pointer lg:inline-block lg:hover:font-bold lg:transition lg:hover:scale-105 lg:min-w-[var(--min-w)]"  style={{'--min-w':`${ListWidth[index].value}px`} as CSSProperties}>
                                     {link.name}
                                 </Link>
                             </li>
