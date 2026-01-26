@@ -39,7 +39,7 @@ export async function ServiceCard({position, service}: CardProps) {
                                     <li key={index}><span className="line-clamp-1 xl:line-clamp-2">{name}</span></li>
                                 ))}
                             </ul>
-                            <Link href={`/`} className="flex gap-1 text-[#DAA520] text-[13.5px] xl:text-[20px] mt-2.5">
+                            <Link href={`/service/${service.id}`} className="flex gap-1 text-[#DAA520] text-[13.5px] xl:text-[20px] mt-2.5">
                                 Ver detalhes completo
                                 <img src="/arrow.svg" alt="Arrow Icon" width={13.5} height={10} loading="eager" decoding="async" fetchPriority="low" className="mt-[2.5px]"/>
                             </Link>
