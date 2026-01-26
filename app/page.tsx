@@ -17,7 +17,7 @@ export default function Home() {
     const contactLabels = [
         {title: "Localização", subtitle: "Brasília, Distrito Federal", urlSvg: "/Pin.svg", widthMobile: 12.5, heigthMobile: 12.5, widthDesktop: 17.5, heigthDesktop: 17.5},
         {title: "Telefone", subtitle: "(61) 99999-9999", urlSvg: "/Phone.svg", widthMobile: 15, heigthMobile: 15, widthDesktop: 20, heigthDesktop: 20},
-        {title: "WhatsApp", subtitle: "(61) 99999-9999", urlSvg: "/WhatsAPP.svg", widthMobile: 15, heigthMobile: 15, widthDesktop: 20, heigthDesktop: 20},
+        {title: "WhatsApp", subtitle: "(61) 99999-9999", urlSvg: "/WhatsApp.svg", widthMobile: 15, heigthMobile: 15, widthDesktop: 20, heigthDesktop: 20},
         {title: "E-mail", subtitle: "contato@duoc.com.br", urlSvg: "/Email.svg", widthMobile: 15, heigthMobile: 15, widthDesktop: 20, heigthDesktop: 20},
     ]
 
