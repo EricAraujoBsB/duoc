@@ -13,7 +13,7 @@ type Service = {
 }
 
 export default function Carousel({services}: {services: Promise<Service[]>}) {
-const ListCircles = [CircleComponent, CircleComponent, CircleComponent, CircleComponent]
+const ListCircles = [CircleComponent, CircleComponent, CircleComponent, CircleComponent, CircleComponent, CircleComponent]
 const allServices = use(services);
 
   const [latePos, setLatePos] = useState(0);
@@ -34,7 +34,7 @@ const allServices = use(services);
       setLatePos(mainPos - 1);
       setNextPos(mainPos + 1);
     }
-    setHiddenPos((mainPos + 2) % 4);
+    setHiddenPos((mainPos + 2) % 6);
   }, [mainPos]);
 
   function handleChangePrevious() {
