@@ -23,8 +23,10 @@ export default function Header() {
     ]
     return(
         <header id="header" className="absolute z-30 top-0 w-full flex justify-between lg:bg-transparent/50 lg:backdrop-blur-md text-white items-center py-5 px-7 lg:px-10">
-            <Image src="/LOGO.svg" alt="Logo" width={150} height={75} className="lg:hidden"/>  
-            <Image src="/LOGO.svg" alt="Logo" width={150} height={50} className="hidden lg:block"/>            
+            <Link href="/">
+                <Image src="/LOGO.svg" alt="Logo" width={150} height={75} className="lg:hidden"/>  
+                <Image src="/LOGO.svg" alt="Logo" width={150} height={50} className="hidden lg:block"/>  
+            </Link>          
             <Menu>
                 <ul className="flex flex-col lg:flex-row justify-center items-center gap-5">
                     {links.map( 

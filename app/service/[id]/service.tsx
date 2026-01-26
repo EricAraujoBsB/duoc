@@ -1,6 +1,5 @@
 import { OtherServiceCard } from "@/components/serviceCard";
 import { getOtherServices_LimitedBy2, getServiceInfosById } from "@/lib/supabase/server"
-import Image from "next/image";
 
 type Service = {
     id: number,
