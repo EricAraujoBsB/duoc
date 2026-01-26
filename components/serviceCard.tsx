@@ -14,7 +14,7 @@ type CardProps = {
     service: Service,
 }
 
-export async function ServiceCard({ position, service}: CardProps) {
+export async function ServiceCard({position, service}: CardProps) {
     function isPair(position: number) {
         return position%2;
     }
@@ -27,7 +27,6 @@ export async function ServiceCard({ position, service}: CardProps) {
                             alt={`${service.nome} Imagem`}
                             fill
                             className="object-cover rounded-xl"
-                            priority={position === 0}
                         />
                     </div>
                         <div className="xl:max-w-[631px]">        

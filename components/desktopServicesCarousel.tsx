@@ -2,116 +2,67 @@
 
 import CircleComponent from "@/components/circle";
 import { ServiceCard } from "@/components/serviceCardHome";
-import { useState } from "react";
+import { useState, use } from "react";
 
-export default function Carousel() {
+type Service = {
+    id: number,
+    nome: string,
+    descricao: string,
+    urlimagem: string;
+    escopo: string[];
+}
 
-const ListCircles = [CircleComponent, CircleComponent];
-    
-const ListComponents = [
-  {
-    title:"Lorem Ipsum 1", 
-    text:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, enim?",
-    item1: "Lorem ipsum dolor",
-    item2: "Lorem ipsum dolor",
-    item3: "Lorem ipsum dolor",
-    imageSrc: "/slane.webp",
-    imageAlt: "Slane Image"
-  },
-    {
-    title:"Lorem Ipsum 2", 
-    text:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, enim?",
-    item1: "Lorem ipsum dolor",
-    item2: "Lorem ipsum dolor",
-    item3: "Lorem ipsum dolor",
-    imageSrc: "/sla1ne.webp",
-    imageAlt: "Slane Image"
-  },
-    {
-    title:"Lorem Ipsum 3", 
-    text:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, enim?",
-    item1: "Lorem ipsum dolor",
-    item2: "Lorem ipsum dolor",
-    item3: "Lorem ipsum dolor",
-    imageSrc: "/sla2ne.webp",
-    imageAlt: "Slane Image"
-  },
-    {
-    title:"Lorem Ipsum 4", 
-    text:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, enim?",
-    item1: "Lorem ipsum dolor",
-    item2: "Lorem ipsum dolor",
-    item3: "Lorem ipsum dolor",
-    imageSrc: "/sla3ne.webp",
-    imageAlt: "Slane Image"
-  },
-    {
-    title:"Lorem Ipsum 5", 
-    text:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, enim?",
-    item1: "Lorem ipsum dolor",
-    item2: "Lorem ipsum dolor",
-    item3: "Lorem ipsum dolor",
-    imageSrc: "/sla4ne.webp",
-    imageAlt: "Slane Image"
-  },
-    {
-    title:"Lorem Ipsum 6", 
-    text:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, enim?",
-    item1: "Lorem ipsum dolor",
-    item2: "Lorem ipsum dolor",
-    item3: "Lorem ipsum dolor",
-    imageSrc: "/sla5ne.webp",
-    imageAlt: "Slane Image"
-  },
-    
-  ]
+export default function Carousel({services}: {services: Promise<Service[]>}) {
 
-  function mod(n:number , m: number) {
-    return ((n % m) + m) % m;
-  }
+    const allServices = use(services);
+    const ListCircles = [CircleComponent, CircleComponent];
 
-  const [leftHiddenPos, setLeftHiddenPos] = useState(mod(ListComponents.length-1, ListComponents.length));
-  const [firstPos, setFirstPos] = useState(0);
-  const [secondPos, setSecondPos] = useState(mod(firstPos+1, ListComponents.length));
-  const [thirdPos, setThirdPos] = useState(mod(firstPos+2, ListComponents.length));
-  const [righttHiddenPos, setRightHiddenPos] = useState(mod(firstPos+3, ListComponents.length));
-  const [right, setRight] = useState(false);
-  const [left, setLeft] = useState(false);
-  const [active, setActive] = useState(false);
+    function mod(n:number , m: number) {
+        return ((n % m) + m) % m;
+    }
 
-  function handleChangePrevious() {
-    setActive(true);
-    setLeftHiddenPos(mod(leftHiddenPos-3, ListComponents.length));
-    setFirstPos(mod(firstPos-3,ListComponents.length));
-    setSecondPos(mod(secondPos-4,ListComponents.length));
-    setThirdPos(mod(thirdPos-4,ListComponents.length));
-    setRightHiddenPos(mod(righttHiddenPos-4,ListComponents.length));
-    setLeft(true);
-    setTimeout(() =>{    
-        setLeft(false)
-        setSecondPos(mod(secondPos-3,ListComponents.length));
-        setThirdPos(mod(thirdPos-3,ListComponents.length));
-        setRightHiddenPos(mod(righttHiddenPos-3,ListComponents.length));
-        setActive(false);
-    }, 250);
-  }
+    const [leftHiddenPos, setLeftHiddenPos] = useState(mod(allServices.length-1, allServices.length));
+    const [firstPos, setFirstPos] = useState(0);
+    const [secondPos, setSecondPos] = useState(mod(firstPos+1, allServices.length));
+    const [thirdPos, setThirdPos] = useState(mod(firstPos+2, allServices.length));
+    const [righttHiddenPos, setRightHiddenPos] = useState(mod(firstPos+3, allServices.length));
+    const [right, setRight] = useState(false);
+    const [left, setLeft] = useState(false);
+    const [active, setActive] = useState(false);
 
-  function handleChangeNext() {
-    setActive(true);
-    setLeftHiddenPos(mod(leftHiddenPos+4, ListComponents.length));
-    setFirstPos(mod(firstPos+4,ListComponents.length));
-    setSecondPos(mod(secondPos+4,ListComponents.length));
-    setThirdPos(mod(thirdPos+3,ListComponents.length));
-    setRightHiddenPos(mod(righttHiddenPos+3,ListComponents.length));
-    setRight(true);
-    setTimeout(() =>{  
-        setRight(false);
-        setLeftHiddenPos(mod(leftHiddenPos+3, ListComponents.length));
-        setFirstPos(mod(firstPos+3,ListComponents.length));
-        setSecondPos(mod(secondPos+3,ListComponents.length));
-        setActive(false);
-    }, 250); 
-  }
+    function handleChangePrevious() {
+        setActive(true);
+        setLeftHiddenPos(mod(leftHiddenPos-3, allServices.length));
+        setFirstPos(mod(firstPos-3,allServices.length));
+        setSecondPos(mod(secondPos-4,allServices.length));
+        setThirdPos(mod(thirdPos-4,allServices.length));
+        setRightHiddenPos(mod(righttHiddenPos-4,allServices.length));
+        setLeft(true);
+        setTimeout(() =>{    
+            setLeft(false)
+            setSecondPos(mod(secondPos-3,allServices.length));
+            setThirdPos(mod(thirdPos-3,allServices.length));
+            setRightHiddenPos(mod(righttHiddenPos-3,allServices.length));
+            setActive(false);
+        }, 250);
+    }
+
+    function handleChangeNext() {
+        setActive(true);
+        setLeftHiddenPos(mod(leftHiddenPos+4, allServices.length));
+        setFirstPos(mod(firstPos+4,allServices.length));
+        setSecondPos(mod(secondPos+4,allServices.length));
+        setThirdPos(mod(thirdPos+3,allServices.length));
+        setRightHiddenPos(mod(righttHiddenPos+3,allServices.length));
+        setRight(true);
+        setTimeout(() =>{  
+            setRight(false);
+            setLeftHiddenPos(mod(leftHiddenPos+3, allServices.length));
+            setFirstPos(mod(firstPos+3,allServices.length));
+            setSecondPos(mod(secondPos+3,allServices.length));
+            setActive(false);
+        }, 250); 
+    }
 
     return(
         <div className="relative min-h-[475px] w-full flex flex-col justify-center items-center">
@@ -125,58 +76,28 @@ const ListComponents = [
                 <div className="relative flex gap-10 justify-center items-center max-w-[980px] min-w-[980px]">
                     <div className={right?"absolute transition duration-250 left-0 z-10":left? "hidden":"hidden"}>
                         <ServiceCard 
-                            title={ListComponents[leftHiddenPos].title} 
-                            text={ListComponents[leftHiddenPos].text} 
-                            item1={ListComponents[leftHiddenPos].item1}
-                            item2={ListComponents[leftHiddenPos].item2}
-                            item3={ListComponents[leftHiddenPos].item3}
-                            imageSrc={ListComponents[leftHiddenPos].imageSrc}
-                            imageAlt={ListComponents[leftHiddenPos].imageAlt}
+                            service={allServices[leftHiddenPos]} 
                         />
                     </div>
 
                     <div className={right?"absolute left-0 min-w-[300px] transition durantion-250 translate-x-[340px] z-20": left? "hidden": "min-w-[300px]"}>
                         <ServiceCard 
-                            title={ListComponents[firstPos].title} 
-                            text={ListComponents[firstPos].text} 
-                            item1={ListComponents[firstPos].item1}
-                            item2={ListComponents[firstPos].item2}
-                            item3={ListComponents[firstPos].item3}
-                            imageSrc={ListComponents[firstPos].imageSrc}
-                            imageAlt={ListComponents[firstPos].imageAlt}
+                            service={allServices[firstPos]} 
                         />
                     </div>
                     <div className={right?"absolute left-0 translate-x-[680px] min-w-[300px] transition durantion-250 z-30":left?"absolute right-0 -translate-x-[680px] transition durantion-250 z-30":"min-w-[300px]"}>
                         <ServiceCard 
-                            title={ListComponents[secondPos].title} 
-                            text={ListComponents[secondPos].text} 
-                            item1={ListComponents[secondPos].item1}
-                            item2={ListComponents[secondPos].item2}
-                            item3={ListComponents[secondPos].item3}
-                            imageSrc={ListComponents[secondPos].imageSrc}
-                            imageAlt={ListComponents[secondPos].imageAlt}
+                            service={allServices[secondPos]}
                         />
                     </div>
                     <div className={right?"hidden":left?"absolute right-0 min-w-[300px] transition durantion-250 -translate-x-[340px] z-20":"min-w-[300px]"}>
                         <ServiceCard 
-                            title={ListComponents[thirdPos].title} 
-                            text={ListComponents[thirdPos].text} 
-                            item1={ListComponents[thirdPos].item1}
-                            item2={ListComponents[thirdPos].item2}
-                            item3={ListComponents[thirdPos].item3}
-                            imageSrc={ListComponents[thirdPos].imageSrc}
-                            imageAlt={ListComponents[thirdPos].imageAlt}
+                            service={allServices[thirdPos]}
                         />
                     </div>   
                     <div className={right?"hidden":left?"absolute transition duration-250 right-0 z-10":"hidden"}>
                         <ServiceCard 
-                            title={ListComponents[righttHiddenPos].title} 
-                            text={ListComponents[righttHiddenPos].text} 
-                            item1={ListComponents[righttHiddenPos].item1}
-                            item2={ListComponents[righttHiddenPos].item2}
-                            item3={ListComponents[righttHiddenPos].item3}
-                            imageSrc={ListComponents[righttHiddenPos].imageSrc}
-                            imageAlt={ListComponents[righttHiddenPos].imageAlt}
+                            service={allServices[righttHiddenPos]}
                         />
                     </div> 
                 </div>

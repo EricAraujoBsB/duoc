@@ -52,3 +52,21 @@ export async function getServices_ScopeLimitedBy3(): Promise<Service[]> {
     throw error;
   }
 }
+
+type ServiceInfos = {
+    nome: string,
+    descricao: string,
+    escopo: string[],
+    diferencial: string[],
+    beneficio: string[];
+}
+
+export async function gerServiceInfosById(id: number): Promise<ServiceInfos> {
+  try {
+    const supabase = await createClient();
+    const {data, error} = await supabase.rpc("getserviceinfosbyid", {serviceid: id}).single();
+    return data as ServiceInfos;
+  } catch(error) {
+    throw error;
+  }
+}

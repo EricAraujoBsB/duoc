@@ -6,14 +6,10 @@ export default async function Services() {
     
     return(
         <>
-                {/* LCP */}
-                <ServiceCard position={0} service={services[0]} />
-
-                {/* resto */}
-                {services.slice(1).map((service, index) => (
+                {services.map((service, index) => (
                     <ServiceCard
                     key={service.id}
-                    position={index + 1}
+                    position={index}
                     service={service}/>
                 ))}
         </>
