@@ -44,7 +44,7 @@ export default function MenuMobile({children}: MenuProps) {
                                 closeMenu();
                             }}}>
                     <div className="py-5 px-7 absolute top-0 left-0 flex justify-between w-full">
-                        <Link href="/">
+                        <Link href="/" onClick={closeMenu}>
                             <Image src="/LOGO.svg" alt="Logo" width={150} height={75} className="lg:hidden"/>  
                         </Link>
                         
