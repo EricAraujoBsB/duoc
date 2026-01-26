@@ -63,10 +63,9 @@ export default async function ServiceInfos({params}: {params: Promise<{id: strin
                     </ul>
                 </article>
             </section>
-            <section className="bg-[#0B0E10] w-full pt-5 pb-10 lg:py-10 px-7 lg:px-10">
+            {/* <section className="bg-[#0B0E10] w-full pt-5 pb-10 lg:py-10 px-7 lg:px-10">
                 <h1 className="text-[#DAA520] text-[15px] lg:text-[37px] text-center px-7 lg:px-10">PORTFÓLIO</h1>
-
-            </section>
+            </section> */}
             <section className="bg-[#06090B] w-full pt-5 pb-10 lg:py-10 px-7 lg:px-10 flex flex-col justify-center items-center">
                 <h1 className="text-[#DAA520] text-[15px] lg:text-[37px] text-center px-7 lg:px-10">EXPLORE MAIS</h1>
                 <h2 className="text-white text-[23px] lg:text-[67px] text-center font-bold">Outros Serviços</h2>
