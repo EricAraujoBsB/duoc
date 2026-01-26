@@ -28,10 +28,10 @@ export function PrimaryServiceCard({service}: CardProps) {
                         <li key={index}><span className="line-clamp-1">{item}</span></li>
                     ))}
                 </ul>
-                <button className="text-[9px] text-amber-400 cursor-pointer ml-1 flex gap-1 absolute bottom-2.5">
+                <Link href={`/service/${service.id}`} className="text-[9px] text-amber-400 cursor-pointer ml-1 flex gap-1 absolute bottom-2.5">
                     Saiba Mais
                     <img src="/arrow.svg" alt="Arrow Icon" width={10} height={1} loading="eager" decoding="async" fetchPriority="low"/>
-                </button>
+                </Link>
             </section>
     
         </article>  
@@ -54,10 +54,10 @@ export function SecondaryServiceCard({service}: CardProps) {
                     ))}
                 </ul>
 
-                <button className="text-[7.5px] text-amber-400 flex ml-1 gap-1 absolute bottom-2">
+                <Link href={`/service/${service.id}`} className="text-[7.5px] text-amber-400 flex ml-1 gap-1 absolute bottom-2">
                     Saiba Mais
                     <img src="/arrow.svg" alt="Arrow Icon" width={9} height={1} loading="eager" decoding="async" fetchPriority="low" />
-                </button>
+                </Link>
             </section>
                 
         </article>  
