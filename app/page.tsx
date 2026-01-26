@@ -75,7 +75,7 @@ export default function Home() {
                         </div>
                     </div>
                     <div className="md:hidden w-full flex justify-center pt-8">
-                        <Link href={"/about"} className="border border-[#DAA520] text-[#DAA520] font-bold text-[13px] py-1 px-10 text-center">
+                        <Link href={"/about"} className="border border-[#DAA520] text-[#DAA520] font-bold text-[13px] py-1 w-[225px] text-center">
                                 CONHEÇA MAIS
                         </Link>
                     </div>
@@ -93,7 +93,7 @@ export default function Home() {
                     <img src="/line.svg" alt="Line Icon" height={10} width={150} loading="eager" decoding="async" fetchPriority="low" className="hidden md:block mt-2"/>
 
                     <ServicesCarousel/>
-                    <Link href={"/services"} className="hidden md:block text-[#0B0E10] bg-[#DAA520] mt-10 font-bold text-[17px] py-1 w-[300px] transition hover:scale-105 text-center">
+                    <Link href={"/services"} className="block text-[#0B0E10] bg-[#DAA520] mt-10 font-bold text-[13px] lg:text-[17px] py-1 w-[225px] lg:w-[300px] transition hover:scale-105 text-center">
                             CONHEÇA NOSSOS SERVIÇOS
                     </Link>
                 </section>
@@ -107,7 +107,7 @@ export default function Home() {
                     <img src="/line.svg" alt="Line Icon" height={10} width={100} loading="eager" decoding="async" fetchPriority="low" className="md:hidden"/>
                     <img src="/line.svg" alt="Line Icon" height={10} width={150} loading="eager" decoding="async" fetchPriority="low" className="hidden md:block mt-2"/>
                     <ProjectsCarousel/>
-                    <Link href={"/projects"} className="hidden md:block text-[#0B0E10] bg-[#DAA520] mt-10 font-bold text-[17px] py-1 w-[300px] transition hover:scale-105 text-center">
+                    <Link href={"/projects"} className="block text-[#0B0E10] bg-[#DAA520] mt-10 font-bold text-[13px] lg:text-[17px] py-1 w-[225px] lg:w-[300px] transition hover:scale-105 text-center">
                             VER PORTFÓLIO COMPLETO
                     </Link>
                 </section>

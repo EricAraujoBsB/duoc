@@ -61,11 +61,31 @@ type ServiceInfos = {
     beneficio: string[];
 }
 
-export async function gerServiceInfosById(id: number): Promise<ServiceInfos> {
+export async function getServiceInfosById(id: number): Promise<ServiceInfos> {
   try {
     const supabase = await createClient();
     const {data, error} = await supabase.rpc("getserviceinfosbyid", {serviceid: id}).single();
     return data as ServiceInfos;
+  } catch(error) {
+    throw error;
+  }
+}
+
+export async function getOtherServices_LimitedBy2(id: number): Promise<Service[]> {
+  try {
+    const supabase = await createClient();
+    const {data: services, error} = await supabase.from("servico").select("id").neq("id", id).limit(2);
+    if(services == null) return [];
+    const allServices = await getServices_ScopeLimitedBy3();
+    const filteredServices = [];
+
+    for(const service of allServices) {
+        if(service.id === services[0]?.id || service.id === services[1]?.id){
+          filteredServices.push(service);
+        }
+      }
+
+    return filteredServices as Service[];
   } catch(error) {
     throw error;
   }
