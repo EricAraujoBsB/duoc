@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 import Header from "@/components/header";
+import Footer from '@/components/footer';
 
 
 const defaultUrl = process.env.VERCEL_URL
@@ -21,7 +22,8 @@ export default function RootLayout({children,}: Readonly<{children: React.ReactN
       <body className={`${montserrat.className} antialiased h-auto w-full relative`} >
         <Header/>
         {children}
-      </body>
+        <Footer/>
+      </body> 
     </html>
   );
 }

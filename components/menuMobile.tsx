@@ -43,7 +43,7 @@ export default function MenuMobile({children}: MenuProps) {
                                 closeMenu();
                             }}}>
                     <div className="py-5 px-7 absolute top-0 left-0 flex justify-between w-full">
-                        <Image src="/logo-icon.svg" alt="Logo" width={150} height={75} className="lg:hidden"></Image>  
+                        <Image src="/LOGO.svg" alt="Logo" width={150} height={75} className="lg:hidden"/>  
                         
                         <button className="cursor-pointer text-[0px]" onClick={closeMenu} >
                             Fechar Menu
