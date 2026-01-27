@@ -16,7 +16,7 @@ export default function Home() {
     const contactLabels = [
         {title: "Localização", subtitle: "Brasília, Distrito Federal", urlSvg: "/Pin.svg", widthMobile: 12.5, heigthMobile: 12.5, widthDesktop: 17.5, heigthDesktop: 17.5},
         {title: "Telefone", subtitle: "(61) 99999-9999", urlSvg: "/Phone.svg", widthMobile: 15, heigthMobile: 15, widthDesktop: 20, heigthDesktop: 20},
-        {title: "WhatsApp", subtitle: "(61) 99999-9999", urlSvg: "/WhatsAPP.svg", widthMobile: 15, heigthMobile: 15, widthDesktop: 20, heigthDesktop: 20},
+        {title: "WhatsApp", subtitle: "(61) 99999-9999", urlSvg: "/WhatsApp.svg", widthMobile: 15, heigthMobile: 15, widthDesktop: 20, heigthDesktop: 20},
         {title: "E-mail", subtitle: "contato@duoc.com.br", urlSvg: "/Email.svg", widthMobile: 15, heigthMobile: 15, widthDesktop: 20, heigthDesktop: 20},
     ]
 
@@ -42,7 +42,7 @@ export default function Home() {
                             <div className="md:relative">
                                 <h1 className="text-white text-[26px] md:text-[50px] font-bold">DUOC</h1>
                                 <div className="relative md:static flex flex-col md:flex-col-reverse">
-                                    <img src="/line.svg" alt="Line Icon" height={10} width={100 } loading="eager" decoding="async" fetchPriority="low" className="md:hidden absolute bottom-[11.5px]"/>
+                                    <img src="/line.svg" alt="Line Icon" height={10} width={100} loading="eager" decoding="async" fetchPriority="low" className="md:hidden absolute bottom-[11.5px]"/>
                                     <img src="/line.svg" alt="Line Icon" height={10} width={160} loading="eager" decoding="async" fetchPriority="low" className="hidden md:block md:mt-7"/>
                                     <h2 className="text-[#DAA520] text-[6.22px] md:text-[30px] font-bold md:absolute md:top-[58px]">Arquitetura e Engenharia</h2>
                                 </div>
