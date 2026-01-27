@@ -25,7 +25,7 @@ export function MobileServiceCard({service}: CardProps) {
             </Link>
             <section className="px-2.5 mt-4 p">
                 <p className="text-[8.647px] text-gray-400 line-clamp-3">{service.descricao}</p>
-                <ul className="text-[8.647px] text-gray-400 list-disc ml-5 mt-3 font-bold marker:text-amber-400 ">
+                <ul className="text-[8.647px] text-gray-400 list-disc mx-5 mt-3 font-bold marker:text-amber-400 ">
                     {service.escopo.map((item, index)=>(
                         <li key={index}><span className="line-clamp-1">{item}</span></li>
                     ))}
@@ -54,7 +54,7 @@ export function DesktopServiceCard({service}: CardProps) {
             </Link>
             <section className="px-5 mt-5">
                 <p className="text-[13px] text-gray-400 line-clamp-3">{service.descricao}</p>
-                <ul className="text-[13px] text-gray-400 list-disc ml-5 mt-4 font-bold marker:text-amber-400">
+                <ul className="text-[13px] text-gray-400 list-disc mx-5 mt-4 font-bold marker:text-amber-400">
                     {service.escopo.map((item, index)=>(
                         <li key={index}><span className="line-clamp-1">{item}</span></li>
                     ))}
