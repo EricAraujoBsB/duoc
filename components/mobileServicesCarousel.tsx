@@ -13,7 +13,6 @@ type Service = {
 }
 
 export default function Carousel({services}: {services: Promise<Service[]>}) {
-  const ListCircles = [CircleComponent, CircleComponent, CircleComponent, CircleComponent, CircleComponent, CircleComponent]
   const allServices = use(services);
 
   const [latePos, setLatePos] = useState(0);
@@ -86,8 +85,8 @@ export default function Carousel({services}: {services: Promise<Service[]>}) {
           </button>   
       </div>
       <div className="flex gap-2">
-        {ListCircles.map((Circle,index)=>(
-          <Circle key={index} position={index} actualPosition={mainPos}/>
+        {allServices.map((service ,index)=>(
+          <CircleComponent key={index} position={index} actualPosition={mainPos}/>
         ))}
       </div>
     </div>
