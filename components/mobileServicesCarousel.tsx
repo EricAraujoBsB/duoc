@@ -37,7 +37,7 @@ export default function Carousel({services}: {services: Promise<Service[]>}) {
 
   function handleChangePrevious() {
     setRight(true);
-    setHiddenPos((mainPos-2+allServices.length) % allServices.length);
+    setHiddenPos((mainPos-2+allServices.length  ) % allServices.length);
     setTimeout(() =>{
       if (mainPos === 0) {
         setMainPos(allServices.length - 1);
