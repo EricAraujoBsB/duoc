@@ -2,7 +2,7 @@
 
 import CircleComponent from "@/components/circle";
 import { useState } from "react";
-import DesktopProjectCard from "./desktopProjectCardToCarousel";
+import DesktopProjectCard from "./desktopProjectsCard";
 
 type ProjectCard = {
   id: number,
