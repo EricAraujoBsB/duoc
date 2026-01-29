@@ -1,6 +1,6 @@
 "use client";
 
-import { use, useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import CircleComponent from "@/components/circle";
 import MobileProjectCard from "./mobileProjectsCard";"@/components/mobileProjectCard";
 
@@ -12,9 +12,8 @@ type ProjectCard = {
   altimagem: string;
 }
 
-export default function Carousel({projectsData}: {projectsData: Promise<ProjectCard[]>}) {
+export default function Carousel({projects}: {projects: ProjectCard[]}) {
 
-   const projects: ProjectCard[] = use(projectsData);
    const ListRef = useRef<(HTMLDivElement | null)[]>([]);
    const containerRef = useRef<HTMLDivElement | null>(null);
    const [active, setActive] = useState(0);
