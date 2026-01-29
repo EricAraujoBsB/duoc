@@ -6,7 +6,7 @@ import ServicesCarousel from "@/components/servicesCarousel";
 import ProjectsCarousel from "@/components/projectsCarousel";
 import { Suspense } from "react";
 
-export default function Home() {
+export default function HomePage() {
 
     const partnerLabels = [
         {title: "ABB", urlSvg: "/ABB-Logo.svg", widthMobile: 100, heigthMobile: 40, widthDesktop: 150, heigthDesktop: 80},

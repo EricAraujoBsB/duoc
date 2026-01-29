@@ -1,4 +1,4 @@
-import { OtherServiceCard } from "@/components/serviceCard";
+import { OtherServiceCard } from "@/components/servicesCard";
 import { getOtherServices_LimitedBy2, getServiceInfosById, getProjectsByServiceId_LimitedBy2 } from "@/lib/supabase/server"
 import { notFound } from "next/navigation";
 import MobileProjectCard from "@/components/mobileProjectCard";
@@ -17,7 +17,7 @@ function isOdd(x: number) {
     return x % 2 !== 0;
 }
 
-export default async function ServiceInfos({params}: {params: Promise<{id: string}>}) {
+export default async function Service({params}: {params: Promise<{id: string}>}) {
     const { id } = await params;
     const serviceInfos = await getServiceInfosById(Number(id));
     if(!serviceInfos) {

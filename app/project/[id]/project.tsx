@@ -3,7 +3,7 @@ import { getOtherProjectsInfos_LimitedBy3, getProjectInfo } from "@/lib/supabase
 import OtherProjectsCarousel from "@/components/otherProjectsCarousel";
 import { notFound } from "next/navigation";
 
-export default async function ProjectInfos({params}: {params: Promise<{id: string}>}) {
+export default async function Project({params}: {params: Promise<{id: string}>}) {
     const { id } = await params;
     const project = await getProjectInfo(Number(id));
     if(!project) {
