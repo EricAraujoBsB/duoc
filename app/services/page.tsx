@@ -37,10 +37,10 @@ export default async function ServicesPage() {
 
             {/* CONTATO */}
             <section className="bg-[#06090B] w-full py-5 lg:p-10 flex flex-col justify-center items-center px-7">
-                <h1 className="text-white text-[20px] md:text-[25px]  lg:text-[33px] font-bold">Conheça Nossos Serviços</h1>
+                <h1 className="text-white text-[20px] md:text-[25px] lg:text-[33px] font-bold">Conheça Nossos Serviços</h1>
                 <p className="text-center text-[12px] md:text-[17px] lg:text-[22px] max-w-[280px] md:max-w-[400px] lg:max-w-[870px] text-[#D8D8D8] mt-5">Entre em contato e receba uma consultoria personalizada para suas necessidades.</p>
                 <div className="flex justify-between mt-6 gap-5">
-                    <Link href="/#contact" className="font-bold bg-[#DAA520] text-[14px] lg:text-[19px] py-1 px-5 lg:px-4 transition hover:scale-105 cursor-pointer">
+                    <Link href="/#contact" className="font-bold bg-[#DAA520] text-[14px] md:text-[16.5px] lg:text-[19px] py-1 px-5 lg:px-4 transition hover:scale-105 cursor-pointer">
                         SOLICITAR ORÇAMENTO
                     </Link>
                 </div>
