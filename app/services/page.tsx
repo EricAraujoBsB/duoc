@@ -7,12 +7,14 @@ export default async function ServicesPage() {
     return(
         <main>
             {/* HISTÓRIA */}
-            <section className="w-full pt-5 pb-10 lg:py-10 px-7 lg:px-10 h-[270px] lg:h-[400px]">
+            <section className="w-full pt-5 pb-10 lg:py-10 px-7 lg:px-10 h-[270px] lg:h-[400px] flex justify-center items-center">
                 <Image src="/background.webp" alt="Hero Image"  priority fetchPriority="high" fill className="max-w-full max-h-[270px] lg:max-h-[400px]" sizes="100vw"/>
-                <h1 className="text-white text-[23px] md:text-[30px] lg:text-[67px] font-bold absolute top-[90px] lg:top-[150px]">Nossos Serviços</h1>
-                <p className="text-left text-[12px] md:text-[18px] lg:text-[22px] lg:max-w-[870px] text-[#D8D8D8] mt-2 absolute top-[130px] mr-7 lg:top-[245px]">Soluções completas em arquitetura, engenharia e automação para transformar seus espaços com excelência técnica e cuidado personalizado.</p>
-                <img src="/line.svg" alt="Line Icon" height={10} width={130} loading="eager" decoding="async" fetchPriority="low" className="lg:hidden mt-5 absolute top-[190px]"/>
-                <img src="/line.svg" alt="Line Icon" height={10} width={250} loading="eager" decoding="async" fetchPriority="low" className="hidden lg:block mt-7 absolute top-[315px]"/>
+                <div className="w-full max-w-[1456px]">
+                    <h1 className="text-white text-[23px] md:text-[30px] lg:text-[67px] font-bold absolute top-[90px] lg:top-[150px]">Nossos Serviços</h1>
+                    <p className="text-left text-[12px] md:text-[18px] lg:text-[22px] lg:max-w-[870px] text-[#D8D8D8] mt-2 absolute top-[130px] mr-7 lg:top-[245px]">Soluções completas em arquitetura, engenharia e automação para transformar seus espaços com excelência técnica e cuidado personalizado.</p>
+                    <img src="/line.svg" alt="Line Icon" height={10} width={130} loading="eager" decoding="async" fetchPriority="low" className="lg:hidden mt-5 absolute top-[190px]"/>
+                    <img src="/line.svg" alt="Line Icon" height={10} width={250} loading="eager" decoding="async" fetchPriority="low" className="hidden lg:block mt-7 absolute top-[315px]"/>
+                </div>
             </section>
 
             {/* SERVIÇOS */}
