@@ -65,7 +65,7 @@ export default function Complete({servicesAndProjects, allProjects} : {servicesA
             </ul>
             <div className="w-full lg:min-w-full lg:max-w-full mt-5 sm:mt-10 lg:mt-10 flex justify-center items-center flex-col gap-5 lg:flex-row lg:flex-wrap lg:gap-10">
                 {projects.map((project, index)=>(
-                    <div key={index} className="w-full">
+                    <div key={index} className="w-full lg:w-auto">
                         <div className="lg:hidden w-full">
                             <MobileProjectCard id={project.id} title={project.nome} localization={project.localizacao} imageSrc={project.urlimagem} imageAlt={project.altimagem}/>
                         </div>
