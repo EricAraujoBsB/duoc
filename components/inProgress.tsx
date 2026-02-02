@@ -54,7 +54,7 @@ export default function InProgress({servicesAndProjectsInProgress, allProjectsIn
                     <div className="flex flex-wrap  justify-center items-center gap-5 mt-5">
                         {servicesAndProjectsInProgress.map((service, index)=>(
                             <li key={index} className={isActive(service.id)?"rounded-xl sm:rounded-2xl md:rounded-3xl bg-[#DAA520] border-[#DAA520] text-[#000000] px-3 py-1 sm:py-1.5 font-bold" :"border border-[#999999] rounded-xl sm:rounded-2xl md:rounded-3xl bg-[#0F0F0F] px-3 py-1 sm:py-1.5"}>
-                                <button className="max-w-[60px] sm:max-w-[150px] md:max-w-[175px] w-full truncate text-start"
+                                <button className="max-w-[60px] sm:max-w-[150px] md:max-w-[175px] xl:max-w-[200px] w-full truncate text-start"
                                         onClick={()=>{setActive(service.id)}}>  
                                     {service.nome}
                                 </button>
