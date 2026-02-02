@@ -11,7 +11,7 @@ type CardPropsDesktop = {
 
 export default function DesktopProjectCard({title, id, localization, imageSrc, imageAlt}: CardPropsDesktop) {
     return(
-        <article className="relative w-full max-w-[400px] xl:max-w-[525px] h-[250px] xl:h-[300px] rounded-xl bg-purple-500 transition hover:scale-[1.02] overflow-hidden">
+        <article className="relative min-w-full max-w-[400px] xl:max-w-[525px] h-[250px] xl:h-[300px] rounded-xl transition hover:scale-[1.02] overflow-hidden">
             <Link href={`/project/${id}`}>
                 <img src={imageSrc} alt={imageAlt} loading="eager" decoding="async" fetchPriority="low" className="absolute min-w-full h-[250px] xl:h-[350px] z-10"/>
                 <div className="p-5 z-30 absolute bottom-0 max-w-[275px] overflow-clip">

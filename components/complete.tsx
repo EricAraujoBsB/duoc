@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import DesktopProjectCard from "./dektopProjectCardForProjectPage";
+import MobileProjectCard from "./mobileProjectsCard";
 
 type ProjectCard = {
   id: number,
@@ -17,7 +18,7 @@ type S_P_InProgress = {
   projects: ProjectCard[];
 }
 
-export default function InProgress({servicesAndProjects, allProjects} : {servicesAndProjects: S_P_InProgress[], allProjects: ProjectCard[]}) {
+export default function Complete({servicesAndProjects, allProjects} : {servicesAndProjects: S_P_InProgress[], allProjects: ProjectCard[]}) {
     const [active, setActive] = useState(0);
     const [projects, setProjects] = useState<ProjectCard[]>([]);    
     function isActive(value: number) {
@@ -62,17 +63,18 @@ export default function InProgress({servicesAndProjects, allProjects} : {service
                     </div>
                 }
             </ul>
-            <div className="w-full mt-5 sm:mt-10 lg:mt-5 flex justify-center items-center gap-10">
-                 <div className="lg:hidden">
-
-                 </div>
-                 <div className="hidden lg:flex flex-wrap w-full justify-center items-center gap-10 mt-10">
-                    {projects.map((project, index)=>(
-                        <DesktopProjectCard key={index} id={project.id} title={project.nome} localization={project.localizacao} imageSrc={project.urlimagem} imageAlt={project.altimagem}/>
-                    ))}
-                 </div>
+            <div className="w-full lg:min-w-full lg:max-w-full mt-5 sm:mt-10 lg:mt-10 flex justify-center items-center flex-col gap-5 lg:flex-row lg:flex-wrap lg:gap-10">
+                {projects.map((project, index)=>(
+                    <div key={index} className="w-full">
+                        <div className="lg:hidden w-full">
+                            <MobileProjectCard id={project.id} title={project.nome} localization={project.localizacao} imageSrc={project.urlimagem} imageAlt={project.altimagem}/>
+                        </div>
+                        <div className="hidden lg:block min-w-[400px] xl:min-w-[525px]">
+                            <DesktopProjectCard id={project.id} title={project.nome} localization={project.localizacao} imageSrc={project.urlimagem} imageAlt={project.altimagem}/>
+                        </div>
+                    </div>
+                ))}
             </div>
-
         </>
     );
 }
