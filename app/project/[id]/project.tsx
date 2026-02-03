@@ -12,14 +12,14 @@ export default async function Project({params}: {params: Promise<{id: string}>})
     const otherProjects = await getOtherProjectsInfos_LimitedBy3(Number(id));
     return (
         <>
-            <section className="bg-[#07090A] w-full py-10 px-7 lg:p-10 text-[#D8D8D8] flex justify-center items-center">
+            <section className="bg-[#07090A] w-full py-10 px-7 lg:px-10 lg:py-20 text-[#D8D8D8] flex justify-center items-center">
                 <div className="w-full max-w-[1456px]">
                     <h1 className="text-[23px] md:text-[30px] lg:text-[67px] font-bold mt-[75px] max-w-[1456px]">{project.nome}</h1>
                     <h2 className="text-left text-[12px] md:text-[18px] lg:text-[22px] text-[#D8D8D8] mt-2 max-w-[1456px]">{project.descricao}</h2>
                     <img src="/line.svg" alt="Line Icon" height={10} width={130} loading="eager" decoding="async" fetchPriority="low" className="lg:hidden mt-5"/>
                     <img src="/line.svg" alt="Line Icon" height={10} width={250} loading="eager" decoding="async" fetchPriority="low" className="hidden lg:block mt-7"/>
                     <div className="flex flex-col justify-center items-center xl:gap-10 w-full">
-                        <div className="w-full">
+                        <div className="w-full lg:mt-14">
                             <ProjectCarousel info_imagem={project.info_imagem}/>
                         </div>
                         <div className="flex flex-col xl:flex-row w-full xl:gap-10"> 
@@ -57,7 +57,7 @@ export default async function Project({params}: {params: Promise<{id: string}>})
             </section>
 
             {(otherProjects.length === 0)?<></>:
-            <section className="bg-[#0B0E10] w-full py-10 px-7 lg:p-10 flex justify-center items-center">
+            <section className="bg-[#0B0E10] w-full py-10 px-7 lg:px-10 lg:py-14 flex justify-center items-center">
                 <div className='w-full max-w-[1456px]'>
                     {(otherProjects.length === 1)?(<></>): 
                     (<OtherProjectsCarousel projects={otherProjects}/>)}
