@@ -107,7 +107,7 @@ export default async function Service({params}: {params: Promise<{id: string}>})
                 <h2 className="text-[#D8D8D8] text-[23px] lg:text-[50px] text-center font-bold">Outros Serviços</h2>
                 <img src="/line.svg" alt="Line Icon" height={10} width={100} loading="eager" decoding="async" fetchPriority="low" className="lg:hidden mt-2"/>
                 <img src="/line.svg" alt="Line Icon" height={10} width={280} loading="eager" decoding="async" fetchPriority="low" className="hidden lg:block mt-2"/> 
-                <div className="flex flex-col gap-7 mt-5 lg:mt-10 w-full 2xl:max-w-[1456px] justify-center items-center">
+                <div className="flex flex-col md:flex-row gap-7 mt-5 lg:mt-10 w-full 2xl:max-w-[1456px] justify-center items-center">
                     {otherServices.map((service, index) => (
                         <OtherServiceCard
                         key={index} 
